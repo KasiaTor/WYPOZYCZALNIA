@@ -5,16 +5,16 @@ $a = session_id();
 include ('configg.php');
 
 mysql_connect($_CONFIG['MySQL']['host'], $_CONFIG['MySQL']['user'], $_CONFIG['MySQL']['pass'])
-or die("Nie uda≈Ço siƒô po≈ÇƒÖczyƒá");
+or die("Nie uda≥o siÍ po≥πczyÊ");
 mysql_select_db($_CONFIG['MySQL']['base']);
 
 main();
 ?>
-<p align="left"><b>Lista dostƒôpnych film√≥w: </b></p>
+<p align="left"><b>Lista dostÍpnych filmÛw: </b></p>
 <hr>
 <p align="center">
 <?php
-		/////////////////////////////////  DOSTƒòPNE FILMY ///////////////////////////////////////////////
+		/////////////////////////////////  DOST PNE FILMY ///////////////////////////////////////////////
 
 mysql_query ("SET NAMES latin2");
 
@@ -24,9 +24,9 @@ $zapytanie_4 = mysql_query("SELECT * FROM film where rezerwacja=0")
  mysql_query ("SET NAMES latin2");
  echo'<table border="1"   bgcolor="white" cellpadding="2" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">';
 echo "
-<td bgcolor='#68A898'><center><b><center>TYTYU≈Å</td></center></b></b></td>
+<td bgcolor='#68A898'><center><b><center>TYTYU£</td></center></b></b></td>
 <td bgcolor='#68A898'><center><b><center>GATUNEK</td></center></b></b></td>
-<td bgcolor='#68A898'><center><b><center>OK≈ÅADKA</center></b></td>
+<td bgcolor='#68A898'><center><b><center>OK£ADKA</center></b></td>
 <td bgcolor='#68A898'><center><b><center>OPIS</center></b></td>
 <td bgcolor='#68A898'><center><b><center>AKTORZY</center></b></td>
 <td bgcolor='#68A898'><center><b><center>CENA</center></b></td></tr>";
@@ -48,11 +48,11 @@ echo"<td><center>$wierszz[5]</td>";
 	echo'</table>';
 ?>
 <?php
-///////////////////////////////////////////////////////// TOP WYPO≈ªYCZANE //////////////////////////////////////////////
+///////////////////////////////////////////////////////// TOP WYPOØYCZANE //////////////////////////////////////////////
 
 ?>
 <br><br>
-<b><p align="left">Najczƒô≈õciej wypo≈ºyczane: </b></p>
+<b><p align="left">NajczÍúciej wypoøyczane: </b></p>
 <p align="center">
 <hr>
 
@@ -63,13 +63,13 @@ $zapytanie_4 = mysql_query("SELECT * FROM film order by wypozyczen_ilosc DESC")
  mysql_query ("SET NAMES latin2");
  echo'<table border="1"   bgcolor="white" cellpadding="2" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">';
 echo "
-<td bgcolor='#68A898'><center><b><center>TYTYU≈Å</td></center></b></b></td>
+<td bgcolor='#68A898'><center><b><center>TYTYU£</td></center></b></b></td>
 <td bgcolor='#68A898'><center><b><center>GATUNEK</td></center></b></b></td>
-<td bgcolor='#68A898'><center><b><center>OK≈ÅADKA</center></b></td>
+<td bgcolor='#68A898'><center><b><center>OK£ADKA</center></b></td>
 <td bgcolor='#68A898'><center><b><center>OPIS</center></b></td>
 <td bgcolor='#68A898'><center><b><center>AKTORZY</center></b></td>
 <td bgcolor='#68A898'><center><b><center>CENA</center></b></td>
-<td bgcolor='#68A898'><center><b><center>ILO≈öƒÜ WYPO≈ªYCZE≈É</center></b></td>";
+<td bgcolor='#68A898'><center><b><center>ILOå∆ WYPOØYCZE—</center></b></td>";
 
 echo "</tr>";
 while ($wierszz=mysql_fetch_row($zapytanie_4))
@@ -99,15 +99,9 @@ echo"<td><center>$wierszz[10]</td>";
 ?>
 <br>
 <br>
-<p align="left"><b>Lista najczƒô≈õciej recenzowanych:</b></p>
+<p align="left"><b>Lista najczÍúciej recenzowanych:</b></p>
 <hr>
 <?php
-
-mysql_connect($_CONFIG['MySQL']['host'], $_CONFIG['MySQL']['user'], $_CONFIG['MySQL']['pass'])
-or die("Nie uda≈Ço siƒô po≈Ç&#177;czyƒá");
-mysql_select_db($_CONFIG['MySQL']['base']);
-mysql_query ("SET NAMES latin2");
-
 
 $zapytanie_4 = mysql_query("SELECT DISTINCT * FROM recenzja order by id DESC")
  or die(mysql_error());
@@ -115,9 +109,9 @@ $zapytanie_4 = mysql_query("SELECT DISTINCT * FROM recenzja order by id DESC")
  mysql_query ("SET NAMES latin2");
  echo'<table border="1"   bgcolor="white" cellpadding="2" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">';
 echo "
-<td bgcolor='#68A898'><center><b><center>TYTU≈Å</td></center></b></b></td>
-<td bgcolor='#68A898'><center><b><center>ILO≈öƒÜ RECENZJI</td></center></b></b></td>
-<td bgcolor='#68A898'><center><b><center>ZOBACZ RECENZJƒò</td></center></b></b></td></tr>";
+<td bgcolor='#68A898'><center><b><center>TYTU£</td></center></b></b></td>
+<td bgcolor='#68A898'><center><b><center>ILOå∆ RECENZJI</td></center></b></b></td>
+<td bgcolor='#68A898'><center><b><center>ZOBACZ RECENZJ </td></center></b></b></td></tr>";
 while ($wierszz=mysql_fetch_row($zapytanie_4))
 {
 	
@@ -125,7 +119,7 @@ while ($wierszz=mysql_fetch_row($zapytanie_4))
 	?>
 	<?php
 	$zapytanie_14 = mysql_query("SELECT DISTINCT tytul, id FROM film where id='$wierszz[1]'");
-	    // wy≈õwietlany wyniki zapytania 
+	    // wyúwietlany wyniki zapytania 
     while($rek = mysql_fetch_array($zapytanie_14)) { 
         echo $rek['tytul']."<br />"; 
     } 
@@ -141,7 +135,7 @@ $query8 = mysql_query('SELECT DISTINCT count(id) AS ile FROM recenzja WHERE id_f
 ?>
 <?php
 echo"</td>";
-echo"<td><center><a href='film_detale.php?id=$wierszz[1]'>zobacz recenzjƒô u≈ºytkownik√≥w</a></td>";
+echo"<td><center><a href='film_detale.php?id=$wierszz[1]'>zobacz recenzjÍ uøytkownikÛw</a></td>";
   
 	 }
 	echo'</table>';
@@ -152,10 +146,6 @@ echo"<td><center><a href='film_detale.php?id=$wierszz[1]'>zobacz recenzjƒô u≈ºyt
 <p align="left"><b>GATUNKI:</b></p>
 <hr>
 <?php
-mysql_connect($_CONFIG['MySQL']['host'], $_CONFIG['MySQL']['user'], $_CONFIG['MySQL']['pass'])
-	or die("Nie uda≈Ço siƒô po≈Ç&#177;czyƒá");
-mysql_select_db($_CONFIG['MySQL']['base']);
- mysql_query ("SET NAMES latin2");
 
 $zapytanie_4 = mysql_query("SELECT * FROM gatunek")
  or die(mysql_error());
@@ -164,7 +154,7 @@ $zapytanie_4 = mysql_query("SELECT * FROM gatunek")
  echo'<table border="1"   bgcolor="white" cellpadding="2" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber1">';
 echo "
 <td bgcolor='#68A898'><center><b><center>GATUNEK</td></center></b></b></td>
-<td bgcolor='#68A898'><center><b><center>ILO≈öƒÜ FILM√ìW</td></center></b></b></td>
+<td bgcolor='#68A898'><center><b><center>ILOå∆ FILM”W</td></center></b></b></td>
 <td bgcolor='#68A898'><center><b><center>ZOBACZ FILMY</td></center></b></b></td></tr>";
 while ($wierszz=mysql_fetch_row($zapytanie_4))
 {

@@ -13,10 +13,12 @@ main();
 <hr>
 <p align="left">
 <img src="../grafika/all.gif"><a href="admin.php">ZWROT FILMU</a><br>
-<br><br><br>
+
+<img src="../grafika/all.gif"><a href="dodanie_filmu_do_bazy.php">DODANIE FILMU DO BAZY</a><br><br>
 </p>
 <p align="center">
 <p align="left"><b>ZWROT FILMU / P£ATNOŒÆ: (filmy wypo¿yczone, które wymagaj¹ potwierdzenia zwrotu przez wypo¿yczaj¹cego i akceptacji wp³aty)</b></p>
+
 <hr>
 
 <?php

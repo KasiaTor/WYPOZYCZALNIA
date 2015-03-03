@@ -20,7 +20,7 @@ main();
 
 
  mysql_connect($_CONFIG['MySQL']['host'], $_CONFIG['MySQL']['user'], $_CONFIG['MySQL']['pass'])
-	or die("Nie uda³o siê po³&#177;czyæ");
+	or die("Nie uda³o siê po³¹czyæ");
 mysql_select_db($_CONFIG['MySQL']['base']);
  mysql_query ("SET NAMES latin2");
 
@@ -36,11 +36,8 @@ echo "
 while ($wierszz=mysql_fetch_row($zapytanie_4))
 {
 echo"<td><center>$wierszz[1]</td>";
-
 	 }
 	echo'</table><br><br>';
-	
-	
 	$recenzja=$_POST['recenzja'];
 	
 	$sql = "INSERT INTO `recenzja`(`id_filmu`, `recenzja`, `dodana_przez_usera`) 	VALUES  ('$id_filmu','$recenzja','$user');";
@@ -49,12 +46,8 @@ if (mysql_query($sql))
  	echo"dziêkujemy za dodanie recenzji";
  else
 { echo
-
  " nie dodano"; }
 
-
-	
-	
 print "<br><a href='index.php'>Powrót</a>";
 ?>
 </html>

@@ -20,6 +20,7 @@ $id_filmu=$_GET['id_filmu'];
 <hr>
 <p align="left">
 <img src="../grafika/all.gif"><a href="admin.php">ZWROT FILMU</a><br>
+<img src="../grafika/all.gif"><a href="dodanie_filmu_do_bazy.php">DODANIE FILMU DO BAZY</a><br><br>
 
 <br><br><br>
 </p>

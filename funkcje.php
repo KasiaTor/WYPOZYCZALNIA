@@ -67,7 +67,7 @@ session_destroy();
    	$sql = mysql_query("SELECT * FROM `users` WHERE `login`='".$_SESSION['user']."'");
 	                           while ($wiersz=mysql_fetch_row($sql))
 {
-  echo"<center> <table border='0' cellspacing='1' style='border-collapse: collapse' bordercolor='#111111' width='754'  bgcolor='#FFFFFF'>Jeste¶ zalogowany jako: <b>$wiersz[1] $wiersz[2]</b>, login: <b>$wiersz[7]</b>, e-mail: <b>$wiersz[3]     </b></table><hr>";
+  echo"<center> <table border='0' cellspacing='1' style='border-collapse: collapse' bordercolor='#111111' width='754'  bgcolor='#FFFFFF'>Zalogowany jako: <b>$wiersz[1] $wiersz[2]</b>, login: <b>$wiersz[7]</b>, e-mail: <b>$wiersz[3]     </b></table><hr>";
   $_SESSION['ewid']=$wiersz[9];
 	 }
 
@@ -113,9 +113,10 @@ if ($_SESSION['aktywnosc']==1)
 {
 $niezalogowany=$_SESSION['niezalogowany']=0;
 		$sql = mysql_query("SELECT * FROM `users` WHERE `login`='".$_SESSION['user']."'");    
+			mysql_query ("SET NAMES latin2");
 while ($wiersz=mysql_fetch_row($sql))
 {
-  echo"<center> <table border='0' cellspacing='1' style='border-collapse: collapse' bordercolor='#111111' width='754'  bgcolor='#FFFFFF'>Jesteœ zalogowany jako: <b>$wiersz[1] $wiersz[2]</b>, login: <b>$wiersz[5]</b>, </b><a href='moje_konto.php'>MOJE KONTO</a>,  <a href='moje_zamowienia.php'>MOJE ZAMÓWIENIA</a>, <a href='wyloguj.php'>WYLOGUJ  </a></table><hr>";
+  echo"<center> <table border='0' cellspacing='1' style='border-collapse: collapse' bordercolor='#111111' width='754'  bgcolor='#FFFFFF'>Zalogowany jako: <b>$wiersz[1] $wiersz[2]</b>, login: <b>$wiersz[5]</b>, </b><a href='moje_konto.php'>MOJE KONTO</a>,  <a href='moje_zamowienia.php'>MOJE ZAMÓWIENIA</a>, <a href='wyloguj.php'>WYLOGUJ  </a></table><hr>";
 $_SESSION['ewid']=$wiersz[5];
 	 } 
 	 }
@@ -124,7 +125,5 @@ $_SESSION['ewid']=$wiersz[5];
  echo"User nie zalogowany - <a href=index_logowanie.php>zaloguj</a> / <a href=dodanie_usera.php>zarejestruj</a>";
  $niezalogowany=$_SESSION['niezalogowany']=1;
  }
-
-	
 }
 ?>
